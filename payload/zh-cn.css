@@ -1,0 +1,79 @@
+@font-face {
+  font-family: "LXGW WenKai AD Web";
+  src: url("fonts/LXGWWenKai-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+/* Supply CJK glyphs to every existing `font-family: Typewriter` rule without
+   replacing the game's Latin face, icon fonts, or deliberately unusual themes. */
+@font-face {
+  font-family: Typewriter;
+  src: url("fonts/LXGWWenKai-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  unicode-range: U+2E80-2EFF, U+3000-303F, U+31C0-31EF, U+3400-4DBF,
+    U+4E00-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
+html[lang="zh-CN"] {
+  --ad-zh-font: "LXGW WenKai AD Web", "Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", sans-serif;
+}
+
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] button,
+html[lang="zh-CN"] select,
+html[lang="zh-CN"] option,
+html[lang="zh-CN"] input:not(.CodeMirror input) {
+  font-family: Typewriter, var(--ad-zh-font);
+  letter-spacing: 0;
+}
+
+html[lang="zh-CN"] .CodeMirror,
+html[lang="zh-CN"] .CodeMirror-hints,
+html[lang="zh-CN"] code,
+html[lang="zh-CN"] pre,
+html[lang="zh-CN"] textarea {
+  font-family: Typewriter, Consolas, monospace;
+}
+
+html[lang="zh-CN"] .c-modal,
+html[lang="zh-CN"] .l-help-me,
+html[lang="zh-CN"] [class*="tooltip"] {
+  line-height: 1.45;
+}
+
+/* The eight Antimatter Dimension autobuyers share one fixed-width row. Give
+   their compact mode buttons the full slot width and keep the reviewed
+   four-character action labels on one line without changing other buttons. */
+html[lang="zh-CN"] .l-autobuyer-box__autobuyers-internal .o-autobuyer-btn--tiny {
+  width: 100%;
+  box-sizing: border-box;
+  padding-inline: 0.2rem;
+  white-space: nowrap;
+}
+
+/* Both modern and classic Antimatter Dimension headers contain a compact
+   Max-all command. Its short Chinese label is designed to remain one line. */
+html[lang="zh-CN"] .modes-container .l-button-container,
+html[lang="zh-CN"] .l-antimatter-dim-tab__header .o-primary-btn--buy-max {
+  white-space: nowrap;
+  word-break: keep-all;
+}
+
+/* Account names are external data and may be longer than the built-in
+   Non-Steam label. Allow that one header to wrap instead of overlapping the
+   neighboring cloud-save column. */
+html[lang="zh-CN"] .c-cloud-options-header {
+  max-width: 100%;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Secret theme S4 supplies this sentence from CSS rather than the DOM. */
+html[lang="zh-CN"] .t-s4 .c-achievements-tab__header--multipliers::after {
+  content: "在其他主题中，点击本行末尾的冒号即可启用这些成就图片。";
+}

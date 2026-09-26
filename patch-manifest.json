@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "patchVersion": "0.3.2",
+  "displayName": "Antimatter Dimensions Simplified Chinese Patch",
+  "indexMarker": "AD-ZH-CN-PATCH:0.3.2",
+  "game": {
+    "appId": "1399720",
+    "buildId": "16370635",
+    "version": "11.5",
+    "originalAsarSize": 67584792,
+    "originalAsarSha256": "2F314EA099D23DBB8FC1921884BBCABCA6176079AF3E6C875AB4F40C82FC4B52"
+  },
+  "catalogueStats": {
+    "matchedFiles": 674,
+    "unmatchedFiles": 5,
+    "parseErrors": 0,
+    "alignedScriptPairs": 4283,
+    "alignedTemplatePairs": 932,
+    "exactEntries": 4816,
+    "patternEntries": 1084,
+    "fragmentEntries": 17,
+    "newsOnlyExactEntries": 1412,
+    "newsOnlyPatternEntries": 57,
+    "conflictsSkipped": 75,
+    "expressionUnsafePatternsSkipped": 172,
+    "weakAnchorPatternsSkipped": 219,
+    "reviewedPatternsDenied": 17,
+    "nonEnglishSourceEntriesSkipped": 1,
+    "explicitWeakPatternExceptions": 56,
+    "unsafePatternsSkipped": 0,
+    "runtimeEquivalentPatternsSkipped": 5
+  },
+  "payload": [
+    {
+      "source": "payload\\zh-cn-catalog.js",
+      "archivePath": "AppFiles/js/zh-cn-catalog.js",
+      "size": 1541646,
+      "sha256": "64617DD2DFF4FDD849E8E5D248BC8B0ECE1BB302837257D8DE64D263796F972D"
+    },
+    {
+      "source": "payload\\zh-cn-runtime.js",
+      "archivePath": "AppFiles/js/zh-cn-runtime.js",
+      "size": 48697,
+      "sha256": "B6B8D7C44A438CD4C42E26716DE1093B744061B606BAAB216C9A35D96A21A526"
+    },
+    {
+      "source": "payload\\zh-cn.css",
+      "archivePath": "AppFiles/stylesheets/zh-cn.css",
+      "size": 2621,
+      "sha256": "0CF5078AB197286C738CAD13486791A15CA2D8E8F0E1927883A82602BC459D67"
+    },
+    {
+      "source": "payload\\fonts\\LXGWWenKai-Medium.ttf",
+      "archivePath": "AppFiles/stylesheets/fonts/LXGWWenKai-Medium.ttf",
+      "size": 25379848,
+      "sha256": "D4BDEB38A39151D74D084CBA5090F8CB7D20BF83EEDB78C35939AE70B9F4E3F6"
+    },
+    {
+      "source": "payload\\fonts\\OFL.txt",
+      "archivePath": "AppFiles/stylesheets/fonts/OFL.txt",
+      "size": 5171,
+      "sha256": "1A25E35DA1031C6C3436FDE545BB9CB5ACA954E9873AFE510C834B8B79BD21A0"
+    }
+  ]
+}
