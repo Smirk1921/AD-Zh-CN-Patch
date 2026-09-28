@@ -13,6 +13,8 @@
  * replicanti remaining-time "(… total)" variants.
  * Local hotfix (round 5, 2026-09-27): dimension row ordinals, cost
  * buttons, galaxy headers, autobuyer mode titles and trigger lines.
+ * Local hotfix (round 6, 2026-09-29): time-study descriptions, EC
+ * requirement labels, TS footer counters, TimeSpan node shapes.
 */
 globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
   "patchVersion": "0.3.2",
@@ -38,6 +40,11 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "runtimeEquivalentPatternsSkipped": 5
   },
   "exact": {
+    "Requirement:": "解锁条件:",
+    "Make the Infinity Point formula better log(x)/307.8 ➜ log(x)/285": "将无限点数公式优化为 log(x)/307.8 ➜ log(x)/285",
+    "Make the Infinity Point formula better log(x)/308 ➜ log(x)/285": "将无限点数公式优化为 log(x)/308 ➜ log(x)/285",
+    "You gain more EP based on how fast your last ten Eternities were": "你的永恒点数获取量会随你最近十次永恒的速度提升",
+    "You gain more EP based on how fast your last ten Eternities were (real time)": "你的永恒点数获取量会随你最近十次永恒的速度提升（现实时间）",
     "Eternity at X EP:": "永恒点数达到 X 时永恒：",
     "Inactive": "未激活",
     "Must be outside of all Challenges and Dilation, and the Eternity Autobuyer must be set to Eternity at zero EP. This milestone's effect is capped at 33ms.": "必须处于所有挑战和时间膨胀之外，且永恒自动购买器须设置为以 0 永恒点数进行永恒。此里程碑的效果上限为 33 毫秒。",
@@ -5730,6 +5737,211 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "V": "薇"
   },
   "patterns": [
+    {
+      "from": "Replicanti are {{#0}} slower until {{#1}}, but Replicanti Galaxies are {{#2}} stronger",
+      "to": "复制器变慢 {{#0}}，直到 {{#1}} 为止，但复制器星系强度提高 {{#2}}",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "Distant Galaxy cost scaling starts {{#0}} Galaxy later ({{#1}} per {{#2}} Dim Boosts)",
+      "to": "遥远星系的成本增长将推迟 {{#0}} 个星系（每 {{#2}} 次维度提升增加 {{#1}}）",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "Distant Galaxy cost scaling starts {{#0}} Galaxies later ({{#1}} per {{#2}} Dim Boosts)",
+      "to": "遥远星系的成本增长将推迟 {{#0}} 个星系（每 {{#2}} 次维度提升增加 {{#1}}）",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "You have {{#0}} Eternities.",
+      "to": "你拥有 {{#0}} 次永恒。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "You have {{#0}} Infinities.",
+      "to": "你拥有 {{#0}} 次无限。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "You have {{#0}} Eternity.",
+      "to": "你拥有 {{#0}} 次永恒。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "You have {{#0}} Infinity.",
+      "to": "你拥有 {{#0}} 次无限。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hours, {{#1}} minutes and {{#2}} seconds",
+      "to": "{{#0}} 小时 {{#1}} 分 {{#2}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hours, {{#1}} minutes and {{#2}} second",
+      "to": "{{#0}} 小时 {{#1}} 分 {{#2}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hours, {{#1}} minute and {{#2}} seconds",
+      "to": "{{#0}} 小时 {{#1}} 分 {{#2}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hours, {{#1}} minute and {{#2}} second",
+      "to": "{{#0}} 小时 {{#1}} 分 {{#2}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hour, {{#1}} minutes and {{#2}} seconds",
+      "to": "{{#0}} 小时 {{#1}} 分 {{#2}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hour, {{#1}} minutes and {{#2}} second",
+      "to": "{{#0}} 小时 {{#1}} 分 {{#2}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hour, {{#1}} minute and {{#2}} seconds",
+      "to": "{{#0}} 小时 {{#1}} 分 {{#2}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hour, {{#1}} minute and {{#2}} second",
+      "to": "{{#0}} 小时 {{#1}} 分 {{#2}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hours and {{#1}} minutes",
+      "to": "{{#0}} 小时 {{#1}} 分",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hours and {{#1}} minute",
+      "to": "{{#0}} 小时 {{#1}} 分",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hour and {{#1}} minutes",
+      "to": "{{#0}} 小时 {{#1}} 分",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hour and {{#1}} minute",
+      "to": "{{#0}} 小时 {{#1}} 分",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} minutes and {{#1}} seconds",
+      "to": "{{#0}} 分 {{#1}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} minutes and {{#1}} second",
+      "to": "{{#0}} 分 {{#1}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} minute and {{#1}} seconds",
+      "to": "{{#0}} 分 {{#1}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} minute and {{#1}} second",
+      "to": "{{#0}} 分 {{#1}} 秒",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} hour",
+      "to": "{{#0}} 小时",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} minute",
+      "to": "{{#0}} 分钟",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
     {
       "from": "Any 8th Time Dimensions purchased above {{#0}} will not further increase the multiplier.",
       "to": "在超过 {{#0}} 后购买的第 8 时间维度不会再进一步增加倍率。",

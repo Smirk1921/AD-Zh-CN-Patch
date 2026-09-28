@@ -34,8 +34,8 @@
     {
       "source": "payload\\zh-cn-catalog.js",
       "archivePath": "AppFiles/js/zh-cn-catalog.js",
-      "size": 1541646,
-      "sha256": "64617DD2DFF4FDD849E8E5D248BC8B0ECE1BB302837257D8DE64D263796F972D"
+      "size": 1547279,
+      "sha256": "55F33D29AE13DF94FECFB52D1CCC0A758DA81DCAB698500681D898D8A00A3D1C"
     },
     {
       "source": "payload\\zh-cn-runtime.js",
