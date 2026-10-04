@@ -15,6 +15,9 @@
  * buttons, galaxy headers, autobuyer mode titles and trigger lines.
  * Local hotfix (round 6, 2026-09-29): time-study descriptions, EC
  * requirement labels, TS footer counters, TimeSpan node shapes.
+ * Local hotfix (round 7, 2026-10-04): Replicanti autobuyer names, TS shop
+ * footer counters, dilation/EC requirement captures, EP cost-jump sentence,
+ * EffectDisplay "Capped:" and ToggleButton "Auto: ON/OFF" nodes.
 */
 globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
   "patchVersion": "0.3.2",
@@ -40,6 +43,13 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "runtimeEquivalentPatternsSkipped": 5
   },
   "exact": {
+    "Replicanti Chance": "复制概率",
+    "Replicanti Interval": "复制间隔",
+    "Replicanti Max Galaxies": "复制器星系上限",
+    "Auto: ON": "自动：开",
+    "Auto: OFF": "自动：关",
+    "Use only the Antimatter Dimension path": "仅使用反物质维度路径",
+    "Use only the Time Dimension path": "仅使用时间维度路径",
     "Requirement:": "解锁条件:",
     "Make the Infinity Point formula better log(x)/307.8 ➜ log(x)/285": "将无限点数公式优化为 log(x)/307.8 ➜ log(x)/285",
     "Make the Infinity Point formula better log(x)/308 ➜ log(x)/285": "将无限点数公式优化为 log(x)/308 ➜ log(x)/285",
@@ -5737,6 +5747,66 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "V": "薇"
   },
   "patterns": [
+    {
+      "from": "You have {{#0}} total Time Theorems.",
+      "to": "你拥有 {{#0}} 时间之理总量。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "You have {{#0}} total Time Theorem.",
+      "to": "你拥有 {{#0}} 时间之理总量。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "You are gaining {{#0}} TT/sec.",
+      "to": "你每秒获得 {{#0}} 时间之理。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "You are gaining {{#0}} TT/hour.",
+      "to": "你每小时获得 {{#0}} 时间之理。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "Requirement: {{#0}} Eternity Points and {{#1}} rows of Achievements",
+      "to": "解锁条件：{{#0}} 永恒点数和 {{#1}} 行成就",
+      "captureTypes": [
+        "numeric",
+        "integer"
+      ]
+    },
+    {
+      "from": "Requirement: {{#0}} Eternity Points",
+      "to": "解锁条件：{{#0}} 永恒点数",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "The cost for the ×{{#0}} multiplier jumps at {{#1}}, {{#2}}, and {{#3}} Eternity Points.",
+      "to": "×{{#0}} 倍率的费用会在 {{#1}}、{{#2}}、{{#3}} 永恒点数处跳涨。",
+      "captureTypes": [
+        "numeric",
+        "numeric",
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "Capped: {{#0}}",
+      "to": "已达到上限：{{#0}}",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
     {
       "from": "Replicanti are {{#0}} slower until {{#1}}, but Replicanti Galaxies are {{#2}} stronger",
       "to": "复制器变慢 {{#0}}，直到 {{#1}} 为止，但复制器星系强度提高 {{#2}}",
