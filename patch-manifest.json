@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "patchVersion": "0.3.2",
+  "patchVersion": "0.3.3",
   "displayName": "Antimatter Dimensions Simplified Chinese Patch",
-  "indexMarker": "AD-ZH-CN-PATCH:0.3.2",
+  "indexMarker": "AD-ZH-CN-PATCH:0.3.3",
   "game": {
     "appId": "1399720",
     "buildId": "16370635",
@@ -35,7 +35,7 @@
       "source": "payload\\zh-cn-catalog.js",
       "archivePath": "AppFiles/js/zh-cn-catalog.js",
       "size": 1553939,
-      "sha256": "33E900D9A35860FE41279924416F1840AE946997AF8ECD73F4C1089487097A2E"
+      "sha256": "43979C2F1701FDF123B5C79A7C2CF3F843840F82507E23C7E56FEC3B04240E6A"
     },
     {
       "source": "payload\\zh-cn-runtime.js",

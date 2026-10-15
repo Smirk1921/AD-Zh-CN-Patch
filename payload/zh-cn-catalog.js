@@ -23,7 +23,7 @@
  * "Next: <value>", EC info paragraph tail and EC6 description.
 */
 globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
-  "patchVersion": "0.3.2",
+  "patchVersion": "0.3.3",
   "locale": "zh-CN",
   "stats": {
     "matchedFiles": 674,
