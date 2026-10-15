@@ -19,12 +19,12 @@
 
 ## 本仓库的工作
 
-以下全部修改完成于 2026 年 9 月 26 日至 10 月 4 日的一次连续工作会话（在与 AI 助手的协作中完成），仅修改 `payload/zh-cn-catalog.js` 一个文件（翻译目录），未改动运行时脚本 `zh-cn-runtime.js`：
+以下全部修改完成于 2026 年 9 月 26 日至 10 月 15 日的一次连续工作会话（在与 AI 助手的协作中完成），仅修改 `payload/zh-cn-catalog.js` 一个文件（翻译目录），未改动运行时脚本 `zh-cn-runtime.js`：
 
 | 项 | 上游 0.3.2 | 本仓库 | 增量 |
 | --- | --- | --- | --- |
-| 精确词条 | 4,816 | 5,696 | +880 |
-| 模式规则 | 1,084 | 1,391 | +307 |
+| 精确词条 | 4,816 | 5,742 | +926 |
+| 模式规则 | 1,084 | 1,400 | +316 |
 | 碎片规则 | 17 | 31 | +14 |
 
 分轮修复内容：
@@ -36,8 +36,9 @@
 5. **第五轮（维度行 / 星系 / 触发行）**：时间/无限维度行名的序数（`1st Time Dimension` → `第 1 时间维度`，经 `ordinal` 捕获转换）、`Cost: … EP/IP` 购买按钮、`Time Shards` 词条与既有规则捕获转换、`遥远/远端反物质星系` 头部、自动永恒标签（渲染时追加冒号导致的失配）、大坍缩自动购买器的 `Will trigger at …` 状态行族。
 6. **第六轮（时间研究 / 永恒挑战 / 时间跨度）**：时间研究描述与解锁条件文本、永恒挑战 `Requirement:` 前缀与需求句、时间研究商店页脚的计数行，以及 `TimeSpan` 各单复数形态的节点形状（`N hours, N minutes and N seconds` 全组合）。
 7. **第七轮（零散运行时拼装文本）**：复制器升级自动购买器按钮名（`Replicanti Chance/Interval/Max Galaxies`，运行时模板拼接）、时间研究商店页脚的 `You have N total Time Theorems.` 与 `You are gaining N TT/sec|hour.`、膨胀时间研究的 `Requirement:` 需求句（`… and N rows of Achievements`、仅 `N Eternity Points`）与 EC11/EC12 的 `Use only the … path`、永恒升级页的 `The cost for the ×N multiplier jumps at …` 与 `Capped: …`、无限维度页的 `Auto: ON/OFF`。
+8. **第八轮（永恒挑战页）**：`ToggleButton` 的 `标签 + ON/OFF` 单节点形态（`Show all known challenges: OFF`、`Auto Eternity Challenges: ON`、`Auto-collapse space:`、`Never Auto-purge Glyphs accepted by filter:` 等 21 个标签——此前只有裸标签词条，追加状态词后便失配）；永恒挑战卡片的 `Completed N times`、裸 `Reward:`、`Goal Span: … IP - … IP` 与 `Next: <效果值>`；`Next:`/`Currently:` 两个 `EffectDisplay` 规则开启捕获递归翻译，配合 `N AG later`、`N per second`、`N (After TS31: M)`、`x^N` 四条效果值规则覆盖 EC5/6/7/10/11/12 的奖励显示；EC 说明段被拆成两节点导致的“前句译成整句、后句留英文”；EC6 描述（含无名氏乱码变体）。
 
-**验证方法**：将补丁运行时的匹配核心原样移植到独立验证台；每轮修改都通过占位符/标签/汉字/冲突机械校验，并运行覆盖全部历史修复的回归用例（最终 79 用例）；对游戏 `app.asar` 的每次重建都做 764 个文件的字节级回比对。静态全量覆盖率扫描显示已覆盖 UI 候选从 12,710 条提升至 13,579 条。
+**验证方法**：将补丁运行时的匹配核心原样移植到独立验证台；每轮修改都通过占位符/标签/汉字/冲突机械校验，并运行覆盖全部历史修复的回归用例（最终 134 用例）；另对全部 33 个 `ToggleButton` 标签逐一扫描 `标签 ON/OFF` 形态。对游戏 `app.asar` 的每次重建都做 764 个文件的字节级回比对。静态全量覆盖率扫描显示已覆盖 UI 候选从 12,710 条提升至 13,579 条。
 
 **兼容性说明**：
 

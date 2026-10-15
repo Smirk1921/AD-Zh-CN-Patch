@@ -18,6 +18,9 @@
  * Local hotfix (round 7, 2026-10-04): Replicanti autobuyer names, TS shop
  * footer counters, dilation/EC requirement captures, EP cost-jump sentence,
  * EffectDisplay "Capped:" and ToggleButton "Auto: ON/OFF" nodes.
+ * Local hotfix (round 8, 2026-10-15): Eternity Challenges tab — ToggleButton
+ * label+ON/OFF nodes, EC card "Completed N times"/"Reward:"/"Goal Span:"/
+ * "Next: <value>", EC info paragraph tail and EC6 description.
 */
 globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
   "patchVersion": "0.3.2",
@@ -43,6 +46,52 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "runtimeEquivalentPatternsSkipped": 5
   },
   "exact": {
+    "Auto Achievements: ON": "自动成就：开",
+    "Auto Achievements: OFF": "自动成就：关",
+    "Auto Eternity Challenges: ON": "自动完成：开",
+    "Auto Eternity Challenges: OFF": "自动完成：关",
+    "Auto adjustment:": "自动调整：",
+    "Auto adjustment: ON": "自动调整：开",
+    "Auto adjustment: OFF": "自动调整：关",
+    "Auto-Annihilation: ON": "自动湮灭：开",
+    "Auto-Annihilation: OFF": "自动湮灭：关",
+    "Auto-Ascend: ON": "自动飞升：开",
+    "Auto-Ascend: OFF": "自动飞升：关",
+    "Auto-Singularity: ON": "自动凝聚：开",
+    "Auto-Singularity: OFF": "自动凝聚：关",
+    "Auto-buy DMD: ON": "自动购买暗物质维度：开",
+    "Auto-buy DMD: OFF": "自动购买暗物质维度：关",
+    "Auto-collapse space: ON": "自动清除空格：开",
+    "Auto-collapse space: OFF": "自动清除空格：关",
+    "Auto-purge on Realities: ON": "现实后自动净化符文仓库：开",
+    "Auto-purge on Realities: OFF": "现实后自动净化符文仓库：关",
+    "Autobuy EP mult ON": "自动购买永恒点数倍增：开",
+    "Autobuy EP mult OFF": "自动购买永恒点数倍增：关",
+    "Autobuy IP mult ON": "自动购买 IP 倍率：开",
+    "Autobuy IP mult OFF": "自动购买 IP 倍率：关",
+    "Describe all milestones: ON": "里程碑说明：开",
+    "Describe all milestones: OFF": "里程碑说明：关",
+    "Effects: ON": "词条：开",
+    "Effects: OFF": "词条：关",
+    "Hotkeys: ON": "快捷键：开",
+    "Hotkeys: OFF": "快捷键：关",
+    "Level: ON": "等级：开",
+    "Level: OFF": "等级：关",
+    "Move Glyphs on changing row count: ON": "增减保护格数量的同时移动符文：开",
+    "Move Glyphs on changing row count: OFF": "增减保护格数量的同时移动符文：关",
+    "Never Auto-purge Glyphs accepted by filter: ON": "符合符文筛选条件的符文不会被自动净化：开",
+    "Never Auto-purge Glyphs accepted by filter: OFF": "符合符文筛选条件的符文不会被自动净化：关",
+    "Pulse Black Hole: ON": "脉冲黑洞：开",
+    "Pulse Black Hole: OFF": "脉冲黑洞：关",
+    "Pulse: ON": "脉冲：开",
+    "Pulse: OFF": "脉冲：关",
+    "Rarity: ON": "稀有度：开",
+    "Rarity: OFF": "稀有度：关",
+    "Show all known challenges: ON": "显示所有已知挑战：开",
+    "Show all known challenges: OFF": "显示所有已知挑战：关",
+    "Reward:": "奖励：",
+    "in order to unlock it again until you complete it; only the Time Theorems are required.": "即可再次解锁（直至完成该挑战）；仅需消耗时间之理数。",
+    "You cannot gain Antimatter Galaxies normally. The cost of upgrading your max Replicanti Galaxies is massively reduced.": "你通常无法获得反物质星系。升级复制器星系上限的费用会大幅降低。",
     "Replicanti Chance": "复制概率",
     "Replicanti Interval": "复制间隔",
     "Replicanti Max Galaxies": "复制器星系上限",
@@ -1725,7 +1774,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "The wildly popular theme song \"Gotta set 'em free\" has reached 500 million downloads in its first week.": "爆红主题曲《一定要放它们自由》首周下载量已达 5 亿。",
     "This game could be called anything. You could call it whatever you like. But you'd be wrong. It's mine.": "这个游戏可以被称为任何东西。你可以随意称呼它。但你错了。这是我的。",
     "What arbitrary, subjective, meaningless number comes out of your mouth like a mercury thermometer? 1.79": "什么样的数字像水银温度计一样从你嘴里说出来，任意的、主观的、毫无意义的？1.79",
-    "When you respec out of an unlocked Eternity Challenge, you don't need to redo the secondary requirement": "当你重置已解锁的永恒挑战时，无需重新达成次要解锁条件即可再次解锁（直至完成该挑战）；仅需消耗时间之理数。",
+    "When you respec out of an unlocked Eternity Challenge, you don't need to redo the secondary requirement": "当你重置已解锁的永恒挑战时，无需重新达成次要解锁条件",
     "1e140 pizzas make an anti-pie. You can't just randomly pop a pie in the oven and expect it to be done.": "1e140 披萨可以制作反馅饼。你不能只是随意地将一个馅饼放入烤箱并期望它完成。",
     "inputs which you must\nfill and inputs in [square brackets] are optional (if used, they should be input": "参数，必须填写；方括号[]内的参数为可选参数（使用时需",
     "Reward: Unlock Tesseracts, which let you increase Infinity Dimension caps\n(see Infinity Dimension tab)": "奖励：解锁超立方体，可提升无限维度的数量上限。（详见无限维度页面）",
@@ -5747,6 +5796,74 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "V": "薇"
   },
   "patterns": [
+    {
+      "from": "Completed {{#0}} times",
+      "to": "已完成 {{#0}} 次",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "Completed {{#0}} time",
+      "to": "已完成 {{#0}} 次",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "Goal Span: {{#0}} IP - {{#1}} IP",
+      "to": "目标跨度：{{#0}} 无限点数 - {{#1}} 无限点数",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "Next: {{#0}}",
+      "to": "下一级：{{#0}}",
+      "captureTypes": [
+        "text"
+      ],
+      "captureTransforms": [
+        "translate"
+      ]
+    },
+    {
+      "from": "{{#0}} AG later",
+      "to": "延后 {{#0}} 个反物质星系",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "{{#0}} per second",
+      "to": "每秒 {{#0}}",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} (After TS31: {{#1}})",
+      "to": "{{#0}}（TS31 后：{{#1}}）",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "x^{{#0}}",
+      "to": "×{{#0}}",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "You {{#0}}. The cost of upgrading your max Replicanti Galaxies is massively reduced.",
+      "to": "你{{#0}}。升级复制器星系上限的费用会大幅降低。",
+      "captureTypes": [
+        "text"
+      ]
+    },
     {
       "from": "You have {{#0}} total Time Theorems.",
       "to": "你拥有 {{#0}} 时间之理总量。",
@@ -12703,6 +12820,9 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
       "to": "当前：{{#0}}",
       "captureTypes": [
         "text"
+      ],
+      "captureTransforms": [
+        "translate"
       ]
     },
     {
