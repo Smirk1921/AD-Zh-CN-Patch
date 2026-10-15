@@ -1,10 +1,10 @@
-# 《反物质维度》简体中文汉化补丁（0.3.3 社区热修版）
+# 《反物质维度》简体中文汉化补丁（0.3.4 社区热修版）
 
 这是适用于 Steam Windows 版《Antimatter Dimensions》（游戏版本 11.5，Build 16370635）的便携简体中文汉化补丁。
 
 本仓库在上游 0.3.2 补丁的基础上，对遗漏翻译做了一次系统性的整理与修复（详见下文[本仓库的工作](#本仓库的工作)）。补丁包含中文文本、中文字体和安装/卸载工具；无需安装 Node.js、Python 或其他软件，也不需要联网。
 
-补丁版本号（`0.3.3`）与本仓库的 payload 修订绑定：安装器把「版本号相同」视为「payload 相同」，因此每次改动 `payload/zh-cn-catalog.js` 都会递增此版本号，这样已装旧版的用户直接双击 `Install-Chinese.cmd` 即可自动升级。
+补丁版本号（`0.3.4`）与本仓库的 payload 修订绑定：安装器把「版本号相同」视为「payload 相同」，因此每次改动 `payload/zh-cn-catalog.js` 都会递增此版本号，这样已装旧版的用户直接双击 `Install-Chinese.cmd` 即可自动升级。
 
 **本仓库不包含、也不分发任何游戏本体文件**；安装器仅替换游戏目录中的 `resources/app.asar`，并会先校验游戏版本与原文件哈希。
 
@@ -21,13 +21,13 @@
 
 ## 本仓库的工作
 
-以下全部修改完成于 2026 年 9 月 26 日至 10 月 15 日的一次连续工作会话（在与 AI 助手的协作中完成），仅修改 `payload/zh-cn-catalog.js` 一个文件（翻译目录），未改动运行时脚本 `zh-cn-runtime.js`：
+以下全部修改完成于 2026 年 9 月 26 日至 10 月 16 日的一次连续工作会话（在与 AI 助手的协作中完成），仅修改 `payload/zh-cn-catalog.js` 一个文件（翻译目录），未改动运行时脚本 `zh-cn-runtime.js`：
 
 | 项 | 上游 0.3.2 | 本仓库 | 增量 |
 | --- | --- | --- | --- |
-| 精确词条 | 4,816 | 5,742 | +926 |
-| 模式规则 | 1,084 | 1,400 | +316 |
-| 碎片规则 | 17 | 31 | +14 |
+| 精确词条 | 4,816 | 5,743 | +927 |
+| 模式规则 | 1,084 | 1,404 | +320 |
+| 碎片规则 | 17 | 32 | +15 |
 
 分轮修复内容：
 
@@ -40,7 +40,9 @@
 7. **第七轮（零散运行时拼装文本）**：复制器升级自动购买器按钮名（`Replicanti Chance/Interval/Max Galaxies`，运行时模板拼接）、时间研究商店页脚的 `You have N total Time Theorems.` 与 `You are gaining N TT/sec|hour.`、膨胀时间研究的 `Requirement:` 需求句（`… and N rows of Achievements`、仅 `N Eternity Points`）与 EC11/EC12 的 `Use only the … path`、永恒升级页的 `The cost for the ×N multiplier jumps at …` 与 `Capped: …`、无限维度页的 `Auto: ON/OFF`。
 8. **第八轮（永恒挑战页）**：`ToggleButton` 的 `标签 + ON/OFF` 单节点形态（`Show all known challenges: OFF`、`Auto Eternity Challenges: ON`、`Auto-collapse space:`、`Never Auto-purge Glyphs accepted by filter:` 等 21 个标签——此前只有裸标签词条，追加状态词后便失配）；永恒挑战卡片的 `Completed N times`、裸 `Reward:`、`Goal Span: … IP - … IP` 与 `Next: <效果值>`；`Next:`/`Currently:` 两个 `EffectDisplay` 规则开启捕获递归翻译，配合 `N AG later`、`N per second`、`N (After TS31: M)`、`x^N` 四条效果值规则覆盖 EC5/6/7/10/11/12 的奖励显示；EC 说明段被拆成两节点导致的“前句译成整句、后句留英文”；EC6 描述（含无名氏乱码变体）。
 
-**验证方法**：将补丁运行时的匹配核心原样移植到独立验证台；每轮修改都通过占位符/标签/汉字/冲突机械校验，并运行覆盖全部历史修复的回归用例（最终 134 用例）；另对全部 33 个 `ToggleButton` 标签逐一扫描 `标签 ON/OFF` 形态。对游戏 `app.asar` 的每次重建都做 764 个文件的字节级回比对。静态全量覆盖率扫描显示已覆盖 UI 候选从 12,710 条提升至 13,579 条。
+9. **第九轮（无限维度页）**：复制器面板的 `You are gaining N Replicanti Galaxies per second`（含 `(all Replicanti Galaxies within …)` 后缀，单复数两种形态）此前完全没有词条；`You are currently in <挑战名>` 规则命中了骨架但不翻译捕获，导致挑战名保留英文——为该规则开启捕获递归翻译，并修正 `in a Doomed Reality. Good luck.` 那条规则（它按**内部计算值**而非**渲染节点**编写，把 `You are currently in` 一起吞进了捕获），补上 Pelle 无挑战时的整句词条；顺带修掉两处译文残留（`距离 无限 复制器还有` 的空格、`无限复制器 （需要⏎…）` 的换行），以及两个把 `Time Theorem(s)` 误译为「时间定理」（全目录其余处均为「时间之理」）的碎片规则，并补 `Time Dilation` 碎片以覆盖 `时间膨胀 + 永恒挑战 N` 这类拼接串。
+
+**验证方法**：将补丁运行时的匹配核心原样移植到独立验证台；每轮修改都通过占位符/标签/汉字/冲突机械校验，并运行覆盖全部历史修复的回归用例（最终 161 用例）；另对全部 33 个 `ToggleButton` 标签逐一扫描 `标签 ON/OFF` 形态。对游戏 `app.asar` 的每次重建都做 764 个文件的字节级回比对。静态全量覆盖率扫描显示已覆盖 UI 候选从 12,710 条提升至 13,579 条。
 
 **兼容性说明**：
 

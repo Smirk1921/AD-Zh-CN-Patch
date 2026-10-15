@@ -26,7 +26,11 @@ $Script:ManifestPath = Join-Path $Script:PatchDirectory "patch-manifest.json"
 $Script:StateDirectory = Join-Path $env:LOCALAPPDATA "AntimatterDimensionsZhPatch"
 $Script:StatePath = Join-Path $Script:StateDirectory "state.json"
 $Script:AdditionalSteamRoots = @($SteamRoot)
-$Script:CompatibleUpgradeVersions = @("0.1.0", "0.1.1", "0.2.0", "0.2.1", "0.2.2", "0.2.3", "0.2.4", "0.2.5", "0.2.6", "0.2.7", "0.2.8", "0.2.9", "0.3.0", "0.3.1", "0.3.2")
+# Bump both lines together with patch-manifest.json whenever the payload changes.
+# SupportedManifestVersion is the version this script ships with; the upgrade
+# list is every earlier released version whose install can be rebuilt safely.
+$Script:SupportedManifestVersion = "0.3.4"
+$Script:CompatibleUpgradeVersions = @("0.1.0", "0.1.1", "0.2.0", "0.2.1", "0.2.2", "0.2.3", "0.2.4", "0.2.5", "0.2.6", "0.2.7", "0.2.8", "0.2.9", "0.3.0", "0.3.1", "0.3.2", "0.3.3")
 
 function Write-Step {
     param([string]$Message)
@@ -1068,7 +1072,7 @@ function Uninstall-Patch {
 
 try {
     $Script:Manifest = Read-JsonFile -Path $Script:ManifestPath
-    if ([string]$Script:Manifest.patchVersion -ne "0.3.3") {
+    if ([string]$Script:Manifest.patchVersion -ne $Script:SupportedManifestVersion) {
         throw "Unsupported patch manifest version."
     }
     $state = Get-ExistingState

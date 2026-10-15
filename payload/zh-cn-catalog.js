@@ -21,9 +21,13 @@
  * Local hotfix (round 8, 2026-10-15): Eternity Challenges tab — ToggleButton
  * label+ON/OFF nodes, EC card "Completed N times"/"Reward:"/"Goal Span:"/
  * "Next: <value>", EC info paragraph tail and EC6 description.
+ * Local hotfix (round 9, 2026-10-16): Infinity tab — Replicanti "gaining N
+ * Replicanti Galaxies per second" lines, "You are currently in <challenge>"
+ * capture translation (incl. the Doomed Reality node), two awkward existing
+ * entries, and the Time Theorem / Time Dilation fragment terms.
 */
 globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
-  "patchVersion": "0.3.3",
+  "patchVersion": "0.3.4",
   "locale": "zh-CN",
   "stats": {
     "matchedFiles": 674,
@@ -46,6 +50,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "runtimeEquivalentPatternsSkipped": 5
   },
   "exact": {
+    "You are currently in a Doomed Reality. Good luck.": "你现在在被毁灭的现实中。祝你好运",
     "Auto Achievements: ON": "自动成就：开",
     "Auto Achievements: OFF": "自动成就：关",
     "Auto Eternity Challenges: ON": "自动完成：开",
@@ -5797,6 +5802,42 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
   },
   "patterns": [
     {
+      "from": "You are gaining {{#0}} Replicanti Galaxies per second (all Replicanti Galaxies within {{#1}})",
+      "to": "你每秒获得 {{#0}} 个复制器星系（所有复制器星系需 {{#1}}）",
+      "captureTypes": [
+        "numeric",
+        "text"
+      ],
+      "captureTransforms": {
+        "1": "duration"
+      }
+    },
+    {
+      "from": "You are gaining {{#0}} Replicanti Galaxy per second (all Replicanti Galaxies within {{#1}})",
+      "to": "你每秒获得 {{#0}} 个复制器星系（所有复制器星系需 {{#1}}）",
+      "captureTypes": [
+        "numeric",
+        "text"
+      ],
+      "captureTransforms": {
+        "1": "duration"
+      }
+    },
+    {
+      "from": "You are gaining {{#0}} Replicanti Galaxies per second",
+      "to": "你每秒获得 {{#0}} 个复制器星系",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "You are gaining {{#0}} Replicanti Galaxy per second",
+      "to": "你每秒获得 {{#0}} 个复制器星系",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
       "from": "Completed {{#0}} times",
       "to": "已完成 {{#0}} 次",
       "captureTypes": [
@@ -6189,7 +6230,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     },
     {
       "from": "{{#0}} remaining until Infinite Replicanti ({{#1}} total)",
-      "to": "距离 无限 复制器还有 {{#0}}（总计 {{#1}}）",
+      "to": "距离复制器达到无限还有 {{#0}}（总计 {{#1}}）",
       "captureTransforms": {
         "0": "duration",
         "1": "duration"
@@ -10377,7 +10418,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     },
 {
       "from": "At Infinite Replicanti (normally takes\n{{#0}})",
-      "to": "无限复制器 （需要\n{{#0}}）",
+      "to": "达到无限复制器（通常需要 {{#0}}）",
       "captureTransforms": {
         "0": "duration"
       }
@@ -10689,7 +10730,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     },
 {
       "from": "{{#0}} remaining until Infinite Replicanti",
-      "to": "距离 无限 复制器还有 {{#0}}",
+      "to": "距离复制器达到无限还有 {{#0}}",
       "captureTransforms": {
         "0": "duration"
       }
@@ -11057,8 +11098,11 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
       ]
     },
     {
-      "from": "{{#0}} in a Doomed Reality. Good luck.",
-      "to": "被毁灭的现实中进行{{#0}}。祝你好运"
+      "from": "You are currently in {{#0}} in a Doomed Reality. Good luck.",
+      "to": "你现在在被毁灭的现实中：{{#0}}。祝你好运",
+      "captureTransforms": {
+        "0": "translate"
+      }
     },
     {
       "from": "Auto-complete ECs every {{#0}} minutes",
@@ -12105,7 +12149,10 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     },
     {
       "from": "You are currently in {{#0}}",
-      "to": "你现在在{{#0}}。"
+      "to": "你现在在{{#0}}。",
+      "captureTransforms": {
+        "0": "translate"
+      }
     },
     {
       "from": "You have {{#0}} antimatter.",
@@ -13078,6 +13125,10 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
   ],
   "fragments": [
     {
+      "from": "Time Dilation",
+      "to": "时间膨胀"
+    },
+    {
       "from": "Time Shards",
       "to": "时间碎片"
     },
@@ -13151,7 +13202,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     },
     {
       "from": "Time Theorems",
-      "to": "时间定理"
+      "to": "时间之理"
     },
     {
       "from": "Antimatter Galaxies",
@@ -13187,7 +13238,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     },
     {
       "from": "Time Theorem",
-      "to": "时间定理"
+      "to": "时间之理"
     },
     {
       "from": "Antimatter Galaxy",
