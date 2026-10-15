@@ -1068,7 +1068,7 @@ function Uninstall-Patch {
 
 try {
     $Script:Manifest = Read-JsonFile -Path $Script:ManifestPath
-    if ([string]$Script:Manifest.patchVersion -ne "0.3.2") {
+    if ([string]$Script:Manifest.patchVersion -ne "0.3.3") {
         throw "Unsupported patch manifest version."
     }
     $state = Get-ExistingState
