@@ -25,9 +25,13 @@
  * Replicanti Galaxies per second" lines, "You are currently in <challenge>"
  * capture translation (incl. the Doomed Reality node), two awkward existing
  * entries, and the Time Theorem / Time Dilation fragment terms.
+ * Local hotfix (round 10, 2026-10-21): Eternity Challenge descriptions —
+ * EC7 concatenated source, EC9/EC11/EC12 rules whose optional trailing
+ * capture broke them when empty, EC10 base + capture translation, the
+ * optional Pelle suffix wrapper, and an EC5 spacing fix.
 */
 globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
-  "patchVersion": "0.3.4",
+  "patchVersion": "0.3.5",
   "locale": "zh-CN",
   "stats": {
     "matchedFiles": 674,
@@ -50,6 +54,9 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "runtimeEquivalentPatternsSkipped": 5
   },
   "exact": {
+    "1st Time Dimensions produce 8th Infinity Dimensions and 1st Infinity Dimensions produce 7th Antimatter Dimensions. Tickspeed also directly applies to Infinity and Time Dimensions.": "第1时间维度产出第8无限维度，且第1无限维度产出第7反物质维度。计数频率也直接作用于无限维度和时间维度。",
+    "you cannot buy Tickspeed upgrades. Infinity Power instead multiplies Time Dimensions with greatly reduced effect.": "你不能购买计数频率升级。无限之力以极低的效果加成时间维度。",
+    "all Dimension multipliers and powers are disabled except for the multipliers from Infinity Power and Dimension Boosts (to Antimatter Dimensions).": "除无限之力和维度提升为反物质维度提供的倍率外，所有维度倍率和指数效果均被禁用。",
     "You are currently in a Doomed Reality. Good luck.": "你现在在被毁灭的现实中。祝你好运",
     "Auto Achievements: ON": "自动成就：开",
     "Auto Achievements: OFF": "自动成就：关",
@@ -5802,6 +5809,37 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
   },
   "patterns": [
     {
+      "from": "the game runs ×{{#0}} slower; all other game speed effects are disabled. The goal must be reached within a certain amount of time or you will fail the Challenge.",
+      "to": "游戏速度降低为原来的 1/{{#0}}，其他游戏速度效果均被禁用。你必须在规定时间内达到目标，否则挑战失败。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "Time Dimensions and Infinity Dimensions are disabled. You gain an immense boost from Infinities to Antimatter Dimensions (Infinities{{#0}}).",
+      "to": "禁用时间维度和无限维度。你的反物质维度将取得基于无限次数的巨大提速（无限次数{{#0}}）。"
+    },
+    {
+      "from": "{{#0}} The Pelle-Specific effect from Infinity Glyphs is also disabled.",
+      "to": "{{#0}}同时，无限符文的佩勒附加词条无效。",
+      "captureTypes": [
+        "text"
+      ],
+      "captureTransforms": {
+        "0": "translate"
+      }
+    },
+    {
+      "from": "The Pelle-Specific effect from Infinity Glyphs is also disabled. {{#0}}",
+      "to": "同时，无限符文的佩勒附加词条无效。{{#0}}",
+      "captureTypes": [
+        "text"
+      ],
+      "captureTransforms": {
+        "0": "translate"
+      }
+    },
+    {
       "from": "You are gaining {{#0}} Replicanti Galaxies per second (all Replicanti Galaxies within {{#1}})",
       "to": "你每秒获得 {{#0}} 个复制器星系（所有复制器星系需 {{#1}}）",
       "captureTypes": [
@@ -8446,7 +8484,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     },
     {
       "from": "Antimatter Galaxy cost increase scaling starts immediately (normally at {{#0}}\nGalaxies). Dimension Boost costs scaling is massively increased.",
-      "to": "星系价格立刻开始增加（通常在 {{#0}} 星系时开始）。 维度提升价格增速大幅增加。"
+      "to": "星系价格立刻开始增加（通常在 {{#0}} 星系时开始）。维度提升价格增速大幅增加。"
     },
     {
       "from": "Challenges require you to reach {{#0}} antimatter under more difficult\nconditions. Completing challenges allows you to upgrade your Autobuyers.",
@@ -8458,7 +8496,10 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     },
     {
       "from": "Time Dimensions and Infinity Dimensions are disabled. You gain an immense boost from\nInfinities to Antimatter Dimensions (Infinities{{#0}}). {{#1}}",
-      "to": "禁用时间维度和无限维度。你的反物质维度将取得基于无限次数的巨大提速。（无限次数{{#0}}）。 {{#1}}"
+      "to": "禁用时间维度和无限维度。你的反物质维度将取得基于无限次数的巨大提速（无限次数{{#0}}）。 {{#1}}",
+      "captureTransforms": {
+        "1": "translate"
+      }
     },
     {
       "from": "Check out Avari's newly built actually infinite infinity pool! With an area of\n{{#0}} square megametres, you'll be sure to have infinite fun!",
