@@ -29,9 +29,12 @@
  * EC7 concatenated source, EC9/EC11/EC12 rules whose optional trailing
  * capture broke them when empty, EC10 base + capture translation, the
  * optional Pelle suffix wrapper, and an EC5 spacing fix.
+ * Local hotfix (round 11, 2026-10-26): time study tree node titles — the
+ * "<id> <path name>" hint text (Antimatter/Infinity/Time Dims, Active/
+ * Passive/Idle, Light/Dark).
 */
 globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
-  "patchVersion": "0.3.5",
+  "patchVersion": "0.3.6",
   "locale": "zh-CN",
   "stats": {
     "matchedFiles": 674,
@@ -5808,6 +5811,62 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "V": "薇"
   },
   "patterns": [
+    {
+      "from": "{{#0}} Antimatter Dims",
+      "to": "{{#0}} 反物质维度",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "{{#0}} Infinity Dims",
+      "to": "{{#0}} 无限维度",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "{{#0}} Time Dims",
+      "to": "{{#0}} 时间维度",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "{{#0}} Active",
+      "to": "{{#0}} 活跃",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "{{#0}} Passive",
+      "to": "{{#0}} 被动",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "{{#0}} Idle",
+      "to": "{{#0}} 挂机",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "{{#0}} Light",
+      "to": "{{#0}} 光明",
+      "captureTypes": [
+        "integer"
+      ]
+    },
+    {
+      "from": "{{#0}} Dark",
+      "to": "{{#0}} 黑暗",
+      "captureTypes": [
+        "integer"
+      ]
+    },
     {
       "from": "the game runs ×{{#0}} slower; all other game speed effects are disabled. The goal must be reached within a certain amount of time or you will fail the Challenge.",
       "to": "游戏速度降低为原来的 1/{{#0}}，其他游戏速度效果均被禁用。你必须在规定时间内达到目标，否则挑战失败。",
