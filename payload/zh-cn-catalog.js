@@ -32,9 +32,13 @@
  * Local hotfix (round 11, 2026-10-26): time study tree node titles — the
  * "<id> <path name>" hint text (Antimatter/Infinity/Time Dims, Active/
  * Passive/Idle, Light/Dark).
+ * Local hotfix (round 12, 2026-11-16): Time Dilation tab — upgrade "Cost:
+ * <n> Dilated Time" lines, EnterDilation/ExitDilation modals, tachyon
+ * panel + galaxy countdown, tachyon gain hints, galaxyThreshold arrow and
+ * dilationPenalty description, and the bare "Next" wording.
 */
 globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
-  "patchVersion": "0.3.6",
+  "patchVersion": "0.3.7",
   "locale": "zh-CN",
   "stats": {
     "matchedFiles": 674,
@@ -57,6 +61,11 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "runtimeEquivalentPatternsSkipped": 5
   },
   "exact": {
+    "Enter": "进入",
+    "Tachyon Particles.": "超光速粒子。",
+    "Tachyon Particle.": "超光速粒子。",
+    "Tachyon Galaxy at": "超光速星系需",
+    "Tachyon Galaxies at": "超光速星系需",
     "1st Time Dimensions produce 8th Infinity Dimensions and 1st Infinity Dimensions produce 7th Antimatter Dimensions. Tickspeed also directly applies to Infinity and Time Dimensions.": "第1时间维度产出第8无限维度，且第1无限维度产出第7反物质维度。计数频率也直接作用于无限维度和时间维度。",
     "you cannot buy Tickspeed upgrades. Infinity Power instead multiplies Time Dimensions with greatly reduced effect.": "你不能购买计数频率升级。无限之力以极低的效果加成时间维度。",
     "all Dimension multipliers and powers are disabled except for the multipliers from Infinity Power and Dimension Boosts (to Antimatter Dimensions).": "除无限之力和维度提升为反物质维度提供的倍率外，所有维度倍率和指数效果均被禁用。",
@@ -5743,7 +5752,7 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "More": "更多",
     "NAME": "名称",
     "News": "新闻",
-    "Next": "下",
+    "Next": "下一个",
     "None": "无",
     "NONE": "无",
     "Okay": "嗯呐",
@@ -5811,6 +5820,87 @@ globalThis.__AD_ZH_CN_CATALOG__ = Object.freeze({
     "V": "薇"
   },
   "patterns": [
+    {
+      "from": "Cost: {{#0}} Dilated Time",
+      "to": "费用：{{#0}} 膨胀时间",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "Cost: {{#0}} Dilated Times",
+      "to": "费用：{{#0}} 膨胀时间",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}} ➜ Next: {{#1}}",
+      "to": "{{#0}} ➜ 下一级：{{#1}}",
+      "captureTypes": [
+        "numeric",
+        "numeric"
+      ]
+    },
+    {
+      "from": "Reduce the Dilation penalty ({{#0}} after reduction)",
+      "to": "降低时间膨胀的惩罚（降低后为 {{#0}}）",
+      "captureTypes": [
+        "text"
+      ]
+    },
+    {
+      "from": "Reach {{#0}} Infinity Points to Eternity and gain Tachyon Particles.",
+      "to": "达到 {{#0}} 无限点数即可进入永恒并获得超光速粒子。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "Reach {{#0}} Infinity Point to Eternity and gain Tachyon Particles.",
+      "to": "达到 {{#0}} 无限点数即可进入永恒并获得超光速粒子。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "Gain {{#0}} Tachyon Particles.",
+      "to": "获得 {{#0}} 个超光速粒子。",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "If you exit Dilation now, you will {{#0}}.",
+      "to": "如果你现在退出时间膨胀，你将{{#0}}。",
+      "captureTypes": [
+        "text"
+      ],
+      "captureTransforms": {
+        "0": "translate"
+      }
+    },
+    {
+      "from": "gain {{#0}} Tachyon Particles",
+      "to": "获得 {{#0}} 个超光速粒子",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}}/sec",
+      "to": "{{#0}}/秒",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
+    {
+      "from": "{{#0}}/s",
+      "to": "{{#0}}/秒",
+      "captureTypes": [
+        "numeric"
+      ]
+    },
     {
       "from": "{{#0}} Antimatter Dims",
       "to": "{{#0}} 反物质维度",

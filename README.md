@@ -1,10 +1,10 @@
-# 《反物质维度》简体中文汉化补丁（0.3.6 社区热修版）
+# 《反物质维度》简体中文汉化补丁（0.3.7 社区热修版）
 
 这是适用于 Steam Windows 版《Antimatter Dimensions》（游戏版本 11.5，Build 16370635）的便携简体中文汉化补丁。
 
 本仓库在上游 0.3.2 补丁的基础上，对遗漏翻译做了一次系统性的整理与修复（详见下文[本仓库的工作](#本仓库的工作)）。补丁包含中文文本、中文字体和安装/卸载工具；无需安装 Node.js、Python 或其他软件，也不需要联网。
 
-补丁版本号（`0.3.6`）与本仓库的 payload 修订绑定：安装器把「版本号相同」视为「payload 相同」，因此每次改动 `payload/zh-cn-catalog.js` 都会递增此版本号，这样已装旧版的用户直接双击 `Install-Chinese.cmd` 即可自动升级。
+补丁版本号（`0.3.7`）与本仓库的 payload 修订绑定：安装器把「版本号相同」视为「payload 相同」，因此每次改动 `payload/zh-cn-catalog.js` 都会递增此版本号，这样已装旧版的用户直接双击 `Install-Chinese.cmd` 即可自动升级。
 
 **本仓库不包含、也不分发任何游戏本体文件**；安装器仅替换游戏目录中的 `resources/app.asar`，并会先校验游戏版本与原文件哈希。
 
@@ -21,12 +21,12 @@
 
 ## 本仓库的工作
 
-以下全部修改完成于 2026 年 9 月 26 日至 10 月 26 日的一次连续工作会话（在与 AI 助手的协作中完成），仅修改 `payload/zh-cn-catalog.js` 一个文件（翻译目录），未改动运行时脚本 `zh-cn-runtime.js`：
+以下全部修改完成于 2026 年 9 月 26 日至 11 月 16 日的一次连续工作会话（在与 AI 助手的协作中完成），仅修改 `payload/zh-cn-catalog.js` 一个文件（翻译目录），未改动运行时脚本 `zh-cn-runtime.js`：
 
 | 项 | 上游 0.3.2 | 本仓库 | 增量 |
 | --- | --- | --- | --- |
-| 精确词条 | 4,816 | 5,746 | +930 |
-| 模式规则 | 1,084 | 1,416 | +332 |
+| 精确词条 | 4,816 | 5,751 | +935 |
+| 模式规则 | 1,084 | 1,427 | +343 |
 | 碎片规则 | 17 | 32 | +15 |
 
 分轮修复内容：
@@ -46,7 +46,9 @@
 
 11. **第十一轮（时间研究树标题）**：树节点标题由 `TimeStudyButton.hintText` 拼成 `"<id> <路径名>"`（`NormalTimeStudies.pathList`），而目录里只有**裸路径名**（`Antimatter Dims`、`Active` 等）的词条——带 ID 前缀的节点永远匹配不上，于是碎片把 `Antimatter` 译成「反物质」、`Dims` 留在英文，显示为 `71 反物质 Dims`。为 8 个路径名各补一条带整数捕获的规则（`71 反物质维度`、`72 无限维度`、`73 时间维度`、`121 活跃`、`122 被动`、`123 挂机`、`221 光明`、`234 黑暗`）。
 
-**验证方法**：将补丁运行时的匹配核心原样移植到独立验证台；每轮修改都通过占位符/标签/汉字/冲突机械校验，并运行覆盖全部历史修复的回归用例（最终 216 用例）；另对全部 33 个 `ToggleButton` 标签逐一扫描 `标签 ON/OFF` 形态。对游戏 `app.asar` 的每次重建都做 764 个文件的字节级回比对。静态全量覆盖率扫描显示已覆盖 UI 候选从 12,710 条提升至 13,579 条。
+12. **第十二轮（时间膨胀页）**：升级卡的 `Cost: <n> Dilated Time` 由 `CostDisplay` 以 `name: "Dilated Time"` 渲染成单节点，目录无对应规则（10 张卡全中招）；`EnterDilationModal` 的确认按钮是字面量 `" Enter "`；超光速粒子面板的 `<n> Tachyon Particles.`、`<n>/s`、以及 `Next … Tachyon Galaxy at … Dilated Time, gained total of … Tachyon Galaxies` 五个分段的计数句；`DilationButton` 的 `Reach … to Eternity and gain Tachyon Particles.`（原规则用了失效的 `{0}` 占位符）；`ExitDilationModal` 的 `If you exit Dilation now, you will <gainText>.`（原 `not gain anything` 词条因整句无规则而永远无法命中）；`galaxyThreshold` 效果的 `➜ Next: …` 箭头、`dilationPenalty` 的描述；另把裸 `Next` 由「下」改为「下一个」。
+
+**验证方法**：将补丁运行时的匹配核心原样移植到独立验证台；每轮修改都通过占位符/标签/汉字/冲突机械校验，并运行覆盖全部历史修复的回归用例（最终 247 用例）；另对全部 33 个 `ToggleButton` 标签逐一扫描 `标签 ON/OFF` 形态。对游戏 `app.asar` 的每次重建都做 764 个文件的字节级回比对。静态全量覆盖率扫描显示已覆盖 UI 候选从 12,710 条提升至 13,579 条。
 
 **兼容性说明**：
 
